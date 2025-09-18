@@ -228,14 +228,12 @@ memory_type = st.sidebar.selectbox(
     ],
     index=0,
 )
-
 language = st.sidebar.selectbox(
     "Output language",
     ["English", "Español", "Français", "Russian", "Deutsch", "中文", "日本語"],
     index=0,
     key="chat_lang",
 )
-
 style = st.sidebar.selectbox(
     "Response style",
     ["Normal", "100 words", "2 connected paragraphs", "5 bullet points"],
