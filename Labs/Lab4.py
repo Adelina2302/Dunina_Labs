@@ -16,9 +16,14 @@ from PyPDF2 import PdfReader
 import requests
 
 # ========== API KEYS ==========
-OPENAI_KEY = st.secrets.get("OPENAI_API_KEY")
-MISTRAL_KEY = st.secrets.get("MISTRAL_API_KEY")
-COHERE_KEY = st.secrets.get("COHERE_API_KEY")
+OPENAI_KEY = st.secrets.get("OPENAI_API_KEY", "")
+MISTRAL_KEY = st.secrets.get("MISTRAL_API_KEY", "")
+COHERE_KEY = st.secrets.get("COHERE_API_KEY", "")
+
+# Safety check for OpenAI key
+if not OPENAI_KEY:
+    st.error("OPENAI_API_KEY is not set! Please configure your key in Streamlit Secrets.")
+    st.stop()
 
 st.set_page_config(page_title="Lab 4b: Course Info Chatbot", layout="wide")
 st.title("Lab 4b: Course Information Chatbot (with RAG)")
@@ -228,12 +233,14 @@ memory_type = st.sidebar.selectbox(
     ],
     index=0,
 )
+
 language = st.sidebar.selectbox(
     "Output language",
     ["English", "Español", "Français", "Russian", "Deutsch", "中文", "日本語"],
     index=0,
     key="chat_lang",
 )
+
 style = st.sidebar.selectbox(
     "Response style",
     ["Normal", "100 words", "2 connected paragraphs", "5 bullet points"],
