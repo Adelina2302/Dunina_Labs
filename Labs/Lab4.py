@@ -195,7 +195,7 @@ if llm_vendor == "OpenAI":
         [
             "gpt-4o",
             "gpt-4-turbo",
-            "gpt-3.5-turbo"
+            "gpt-5-nano"
         ],
         key="openai_model",
         index=0
