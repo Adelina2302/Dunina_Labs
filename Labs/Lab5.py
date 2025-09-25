@@ -240,7 +240,7 @@ def get_cohere_suggestion(city, weather):
     else:
         return "Cohere API error: " + r.text
 
-st.title("What to Wear Bot (OpenAI, Mistral, Cohere)")
+st.title("What to Wear Bot")
 
 vendor = st.selectbox(
     "Choose LLM vendor for clothing advice:",
