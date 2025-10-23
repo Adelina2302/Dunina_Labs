@@ -1,3 +1,9 @@
+#I chose to complete the LangChain Lab 
+#because it allowed me to explore a more advanced agent 
+# architecture with real retrieval, memory, and reasoning capabilities. 
+# I wanted hands-on experience building a full RAG system using LangChain tools,
+# which felt closer to real-world AI research assistant applications.
+
 __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
