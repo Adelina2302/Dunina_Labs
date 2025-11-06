@@ -31,3 +31,6 @@ langchain-openai==0.2.5
 
 # Vector DB
 chromadb==0.4.22
+
+
+pillow
